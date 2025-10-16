@@ -17,6 +17,7 @@ export interface Question {
   isReverseScored: boolean;
   prompt: string;
   type: 'likert';
+  predictorsOnly?: boolean;
 }
 
 /**
@@ -66,6 +67,11 @@ export interface ScoringData {
   mbti_types?: { // This is now optional as descriptions are moved
     [key: string]: PersonaInfo;
   };
+  predictors_only?: Array<{
+    id: string;
+    axis_hint: string;
+    reverse: boolean;
+  }>;
 }
 
 

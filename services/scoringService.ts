@@ -93,7 +93,7 @@ function scoreWithConfig(scoring: ScoringData, responses: Record<string, number>
   return { tool: toolLabel, axes, code };
 }
 
-function scoreTriStack45(responses: Record<string, number>): TriStackScores {
+function scoreTriStack(responses: Record<string, number>): TriStackScores {
   const mbti = scoreWithConfig(mbti15Scoring, responses, 'MBTI');
   const prism = scoreWithConfig(prism15Scoring, responses, 'PRISM');
   const quest = scoreWithConfig(quest15Scoring, responses, 'QuEST');
@@ -112,7 +112,7 @@ function questCodeWithDot(quest: ToolScore): string {
 
 // MAIN EXPORTED FUNCTION
 export const calculateResults = (answers: Answers): PersonalityResult => {
-  const scores = scoreTriStack45(answers);
+  const scores = scoreTriStack(answers);
 
   // --- MBTI Processing ---
   const mbtiType = mbtiTypeWithX(scores.mbti);

@@ -10,7 +10,7 @@ interface QuestionnaireProps {
   setAnswers: React.Dispatch<React.SetStateAction<Answers>>;
 }
 
-const QUESTIONS_PER_PAGE = 6;
+const QUESTIONS_PER_PAGE = 9;
 
 export const Questionnaire: React.FC<QuestionnaireProps> = ({ questions, onComplete, answers, setAnswers }) => {
   const [currentPage, setCurrentPage] = useState(0);
